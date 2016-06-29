@@ -1,0 +1,10 @@
+{
+    "require": {
+        "kbjr/git.php": "0.1.4.13",
+    },
+    "autoload":{
+        "classmap": [
+            "vendor/autoconstants"
+        ]
+    }
+}
