@@ -11,4 +11,4 @@ $ php ~/gitchecker/run.php
 
 License
 ----
-MIT
+GitChecker is licensed under the MIT License - see the LICENSE file for details
