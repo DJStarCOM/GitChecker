@@ -57,23 +57,23 @@ class GitCheckerConfig
      */
     private function parseConfig(array $config)
     {
-        $path = isset($config['path']) ? $config['path'] : null;
-        $connectionConf = isset($config['connection']) ? $config['connection'] : null;
-        $repositoriesConf = isset($config['repository']) ? $config['repository'] : null;
+        $path = $config['path'] ?? null;
+        $connectionConf = $config['connection'] ?? null;
+        $repositoriesConf = $config['repository'] ?? null;
 
-        if (!empty($pathConf) && is_writable($pathConf)) {
+        if (!empty($path) && is_writable($path)) {
             $this->path = $path;
         } else {
             throw new \Exception("Specified path '{$path}' is not writable!");
         }
 
-        $protocol = isset($connectionConf['protocol']) ? $connectionConf['protocol'] : null;
-        $host = isset($connectionConf['host']) ? $connectionConf['host'] : null;
-        $port = isset($connectionConf['port']) ? $connectionConf['port'] : null;
-        $authType = isset($connectionConf['auth']) ? $connectionConf['auth'] : null;
-        $user = isset($connectionConf['user']) ? $connectionConf['user'] : null;
-        $pass = isset($connectionConf['pass']) ? $connectionConf['pass'] : null;
-        $url = isset($connectionConf['url']) ? $connectionConf['url'] : null;
+        $protocol = $connectionConf['protocol'] ?? null;
+        $host = $connectionConf['host'] ?? null;
+        $port = $connectionConf['port'] ?? null;
+        $authType = $connectionConf['auth'] ?? null;
+        $user = $connectionConf['user'] ?? null;
+        $pass = $connectionConf['pass'] ?? null;
+        $url = $connectionConf['url'] ?? null;
 
         foreach ($repositoriesConf as $repository) {
             $subPath = $url . '/' . $repository . '.git';
